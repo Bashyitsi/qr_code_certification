@@ -24,6 +24,5 @@ export function generateCertificateCode(): string {
 }
 
 export function getCertificateVerificationUrl(certificateCode: string): string {
-  const baseUrl = process.env.NEXTAUTH_URL || 'http://localhost:3000'
-  return `${baseUrl}/verify/${certificateCode}`
+  return `https://certificate.kigalideutschacademy.com/verify/${certificateCode}`
 }

@@ -43,13 +43,14 @@ export default async function CertificateVerificationPage({ params }: Props) {
         {/* PAGE 1: CERTIFICATE */}
         <div style={{ backgroundColor: 'white', padding: 'clamp(20px, 5vw, 60px)', marginBottom: '0', boxShadow: '0 2px 10px rgba(0,0,0,0.1)', borderRadius: '16px', flex: 1, display: 'flex', flexDirection: 'column' }}>
           
-          {/* HEADER: Title at top left */}
-          <div style={{ marginBottom: 'clamp(10px, 2vh, 20px)' }}>
+          {/* HEADER: Title at top left with Logo at top right */}
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 'clamp(10px, 2vh, 20px)' }}>
             <div style={{ fontSize: 'clamp(20px, 5vw, 26px)', fontWeight: 'bold', textAlign: 'left' }}>
               <span style={{ color: '#111111' }}>KIGALI </span>
               <span style={{ color: '#3A0F14' }}>DEUTSCH</span>
               <span style={{ color: '#111111' }}> ACADEMY</span>
             </div>
+            <img src="/kda-logo.svg" alt="KDA Logo" style={{ height: 'clamp(50px, 8vw, 60px)', width: 'auto' }} />
           </div>
 
           {/* Spacing between header and content */}
@@ -191,16 +192,10 @@ export default async function CertificateVerificationPage({ params }: Props) {
             <div>Kigali, {formatDateToGerman(certificate.pruefungsdatum)}</div>
             <div style={{ fontSize: '8px', color: '#666666', marginTop: '2px' }}>Ort Datum - Location, date</div>
             
-            <div style={{ marginTop: '15px' }}>
-              <div>Please verify the validity of the certificate here : www.kigalideutschacademy.com</div>
-              <div style={{ marginTop: '3px' }}>Email : deutschconnectacademy@gmail.com Or scan the code</div>
+            {/* Certification Statement */}
+            <div style={{ marginTop: '20px', padding: '12px', backgroundColor: '#F4F3C2', borderRadius: '4px', fontSize: '9px', color: '#111111', fontWeight: 'bold', textAlign: 'center' }}>
+              ✓ This certificate is certified and is authorized to be used
             </div>
-
-            {certificate.qr_code_url && (
-              <div style={{ marginTop: '15px' }}>
-                <img src={certificate.qr_code_url} alt="QR Code" style={{ width: '60px', height: '60px', display: 'block' }} />
-              </div>
-            )}
           </div>
 
           {/* BOTTOM BRANDING */}
